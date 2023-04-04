@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.music-player {
+    width: 350px;
+    height: 550px;
+    border-radius: 20px;
+    background: rgba(231, 213, 158, 0.12);
+    box-shadow: 0 40px 100px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    overflow: hidden;
+    color: #D9B64E;
+}
+
+.music-name, /* separar por virgula coloca os dois juntos para ser modificado */
+.artist-name {
+    text-align: center;
+    text-transform: capitalize; /* deixar maiusculas e minusculas */
+}
+
+.music-name {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.artist-name {
+    font-size: 20px;
+}
+
+.disk-play {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/pt/f/ff/Rockstar.jpg');
+    background-size: cover;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.04);
+    animation: rotate 20s linear infinite; /* rodar*/
+    margin-top: 60px;
+}
+
+.disk-play::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #21211F;
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: bisque;
+    overflow: hidden; /* controlar o deslizante*/
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb { /* selecionar o ponteiro menor*/
+    -webkit-appearance: none;
+    width: 4px;
+    height: 20px;
+    background-color: #1C1C1A;
+    box-shadow: -400px 0 0 400px #21211F;
+}
+
+.current-time,
+.song-duration {
+    font-size: 14px;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    gap: 20px;
+}
+
+.play-btn-pause {
+    position: relative;
+    border: none;
+    background: transparent;
+    color: #1C1C1A;;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-backward-btn {
+    position: relative;
+    border: none;
+    background: transparent;
+    color: #1C1C1A;;
+    font-size: 35px;
+    justify-content: space-between;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 2s;
+}
+
+.play-btn-pause:hover {
+    transform: scale(1.2); /* aumentar*/
+}
+
+@keyframes rotate { /* rodar*/
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+button{
+    border: none;
+    background: transparent;
+    color: rgba(217, 182, 78, 0.3);
+    margin-top: 50px;
+    font-size: 40px;
+    transition: all 1.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.2);
+    opacity: 1.0;
+
+}
+
+#play-btn,
+#pause-btn{
+    opacity: 0.9;
+}
+
+#play-btn:hover,
+#pause-btn:hover{
+    opacity: 1.2;
+    color: #BFA454;
+}
